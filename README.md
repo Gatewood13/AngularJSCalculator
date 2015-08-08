@@ -6,4 +6,4 @@ This Calculator was inspired by this tutorial: http://rabidgadfly.com/2012/12/an
 I edited the styling and added functionality for dividing and multiplying. 
 Also edited file structure to include the script from a seperate file. 
 
-Feel free to use this in any way you would like to. 
+Feel free to use this in any way you would like to. You will need angular.min.js for this to function properly. 
