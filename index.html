@@ -1,0 +1,74 @@
+
+<!DOCTYPE HTML>
+<html >
+
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Calculator</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+    </head>
+
+    <body >
+        <div class="header">
+            <h1>Calculator Using Angular</h1>
+        </div>
+
+
+        <!-- Tell the app to use the Ctrl scope defined in our app.js -->
+        <div ng-app="app" ng-controller="Calculator">
+            <div class="calculatorBody">
+                <!-- Calculator Display -->
+                <div class="border">
+                    <!-- Display is bound to scope variables in app.js -->
+                    <p class="output" name="output">{{output}}
+                        <br>{{operationToken}}</p>
+                </div>
+                <div class="calcbuttons">
+                    <!-- Buttons all have ng-click directives that call functions in app.js
+                    -->
+                    <button name="btnClear" class="operationBtn" ng-click='clear()'>C</button>
+                    <button name="btnDivide" class="operationBtn" ng-click='divide()'>/</button>
+                    <button name="btnMultiply" class="operationBtn" ng-click='multiply()'>X</button>
+                    <button name="placeholderOne" class="placeholder" value=" " disabled>a</button>
+                    
+                    <br>
+                    <button name="btn7" class="numberBtn" value="7" ng-click='updateOutput(7)'>7</button>
+                    <button name="btn8" class="numberBtn" value="8" ng-click='updateOutput(8)'>8</button>
+                    <button name="btn9" class="numberBtn" value="9" ng-click='updateOutput(9)'>9</button>
+                    <button name="btnMinus" class="operationBtn" ng-click='subtract()'>-</button>
+
+                    <br>
+                    <button name="btn4" class="numberBtn" value="4" ng-click='updateOutput(4)'>4</button>
+                    <button name="btn5" class="numberBtn" value="5" ng-click='updateOutput(5)'>5</button>
+                    <button name="btn6" class="numberBtn" value="6" ng-click='updateOutput(6)'>6</button>
+                    <button name="btnPlus" class="operationBtn" ng-click='add()'>+</button>
+
+                    <br>
+                    <button name="btn1" class="numberBtn" value="1" ng-click='updateOutput(1)'>1</button>
+                    <button name="btn2" class="numberBtn" value="2" ng-click='updateOutput(2)'>2</button>
+                    <button name="btn3" class="numberBtn" value="3" ng-click='updateOutput(3)'>3</button>
+                    <button name="btnEquals" class="operationBtn" ng-click='calculate()'>=</button>
+                    
+                    <br>
+                    <button name="placeholderTwo" class="placeholder" value=" " disabled>a</button>
+                    <button name="btn0" class="numberBtn" value="0" ng-click='updateOutput(0)'>0</button>
+                    <button name="placeholderThree" class="placeholder" value=" " disabled>a</button>
+                    <button name="placeholderFour" class="placeholder" value=" " disabled>a</button>       
+                </div> <!-- end calcbuttons -->
+            </div> <!-- end calculator body -->
+            <!-- Scoped variables displayed for debugging -->
+            <p>pendingOperation: {{pendingOperation}}
+                <br>lastOperation: {{lastOperation}}
+                <br>runningTotal: {{runningTotal}}
+                <br>pendingValue: {{pendingValue}}
+                <br>newNumber: {{newNumber}}</p>
+        </div>
+
+    <footer>
+        <p>This calculator was inspired by this tutorial: http://rabidgadfly.com/2012/12/angularjs-simple-calculator/ </p>
+
+    </footer>    
+    </body>
+</html>
